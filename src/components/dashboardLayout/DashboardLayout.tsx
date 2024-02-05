@@ -27,7 +27,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
       </aside>
 
       <main className='relative w-full overflow-y-auto overflow-x-hidden'>
-          <header className='px-5 sticky top-0 w-full h-16 flex justify-end items-center gap-5 bg-slate-800 border-b-2 border-white/50'>
+          <header className='px-5 sticky z-10 top-0 w-full h-16 flex justify-end items-center gap-5 bg-slate-800 border-b-2 border-white/50'>
             <div className=''>
               <button className='px-4 py-2 rounded-lg shadow-lg bg-white/50'>DarkMode</button>
             </div>
