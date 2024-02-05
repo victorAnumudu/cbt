@@ -1,6 +1,5 @@
 
-import React, { ReactNode, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { ReactNode, useState } from 'react'
 import Calculator from '../calculator'
 
 export default function DashboardLayout({children}:{children: ReactNode}) {
