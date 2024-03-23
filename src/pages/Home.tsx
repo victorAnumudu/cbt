@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import FloatSelectInput from "../components/FloatSelectInput"
+// import FloatSelectInput from "../components/FloatSelectInput"
 export default function Home() {
 
   // let [value, setvalue] = useState<string>('')
 
-  const handleVal = (value:string) => {
-    setvalue(value)
-  }
+  // const handleVal = (value:string) => {
+  //   setvalue(value)
+  // }
 
   return (
     <div>Home
@@ -51,17 +51,17 @@ type Data = {
   label:string
 }[]
 
-let customData:Data = [
-  {value: 'abia', label:'Abia'},
-  {value: 'adamawa', label:'Yola'},
-  {value: 'akwa ibom', label:'Uyo'},
-  {value: 'anambra', label:'Awka'},
-  {value: 'buchi', label:'Buchi'},
-  {value: 'benue', label:'Makurdi'},
-  {value: 'borno', label:'Madugiri'},
-  {value: 'cross river', label:'Calabar'},
-  {value: 'delta', label:'Asaba'},
-]
+// let customData:Data = [
+//   {value: 'abia', label:'Abia'},
+//   {value: 'adamawa', label:'Yola'},
+//   {value: 'akwa ibom', label:'Uyo'},
+//   {value: 'anambra', label:'Awka'},
+//   {value: 'buchi', label:'Buchi'},
+//   {value: 'benue', label:'Makurdi'},
+//   {value: 'borno', label:'Madugiri'},
+//   {value: 'cross river', label:'Calabar'},
+//   {value: 'delta', label:'Asaba'},
+// ]
 
 
 // const OTPInput = () => {

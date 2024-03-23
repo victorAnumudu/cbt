@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 type Data = {
     value:string,
     label:string
@@ -12,8 +10,8 @@ type Props = {
 }
 
 export default function FloatSelectInput({
-    data,
-    name,
+    // data,
+    // name,
     // onSelect
 }:Props) {
 
