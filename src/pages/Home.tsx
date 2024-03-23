@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 // import FloatSelectInput from "../components/FloatSelectInput"
 export default function Home() {
 
@@ -46,10 +45,10 @@ export default function Home() {
 }
 
 
-type Data = {
-  value:string,
-  label:string
-}[]
+// type Data = {
+//   value:string,
+//   label:string
+// }[]
 
 // let customData:Data = [
 //   {value: 'abia', label:'Abia'},
