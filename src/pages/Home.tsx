@@ -14,11 +14,11 @@ export default function Home() {
       <a href="../assets/box-family.png" download>Download</a>
       <video src="../assets/audio/5_second_sound_effect.mp4" controls></video>
       <div className="w-72">
-        <FloatSelectInput 
+        {/* <FloatSelectInput 
           data={customData}
           name='state'
           onSelect={()=>handleVal}
-        />
+        /> */}
       </div>
       <p>Hello</p>
       <div className="w-full h-10 relative after:absolute after:content-['▼'] active:after:rotate-180 after:transition-all after:duration-300 after:z-20 after:right-2 after:top-1/2 after:-translate-y-1/2 after:text-white">
@@ -40,7 +40,7 @@ export default function Home() {
         </select>
       </div>
 
-      <OTPInput />
+      {/* <OTPInput /> */}
     </div>
   )
 }
