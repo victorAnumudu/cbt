@@ -8,31 +8,31 @@ type Data = {
 type Props = {
     data:Data,
     name:string,
-    onSelect:()=>void
+    // onSelect:()=>void
 }
 
 export default function FloatSelectInput({
     data,
     name,
-    onSelect
+    // onSelect
 }:Props) {
 
-    let [value, setvalue] = useState<string>('')
-    let [showValue, setShowValue] = useState<boolean>(false)
+    // let [value, setvalue] = useState<string>('')
+    // let [showValue, setShowValue] = useState<boolean>(false)
 
-    const [filteredData, setFilteredData] = useState<Data>(data)
+    // const [filteredData, setFilteredData] = useState<Data>(data)
 
-    const handleFilterData = ({target:{value}}:{target:{value:string}}) => {
-        let filterKey;
-        if(name=='state'){
-            filterKey = 'label'
-        }else{
-            filterKey = ''
-        }
-        const newData = data.filter(item => item.label.toLocaleLowerCase().startsWith(value.toLocaleLowerCase()))
-        setFilteredData(newData)
-        setvalue(value)
-    }
+    // const handleFilterData = ({target:{value}}:{target:{value:string}}) => {
+    //     let filterKey;
+    //     if(name=='state'){
+    //         filterKey = 'label'
+    //     }else{
+    //         filterKey = ''
+    //     }
+    //     const newData = data.filter(item => item.label.toLocaleLowerCase().startsWith(value.toLocaleLowerCase()))
+    //     setFilteredData(newData)
+    //     setvalue(value)
+    // }
 
     const onInputSelect = (value:string) => {
         // setvalue(value)
