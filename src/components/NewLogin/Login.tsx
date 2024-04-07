@@ -23,7 +23,7 @@ export default function Login() {
     }
 
   return (
-    <div className={`w-full h-screen overflow-y-auto bg-[url('../../../src/assets/images/sign-in.png')] bg-top bg-cover`}>
+    <div className={`w-full h-screen overflow-y-auto bg-[url('../../src/assets/images/sign-in.png')] bg-top bg-cover`}>
         <div className='containerMode h-full'>
             <div className='grid grid-cols-1 md:grid-cols-2 items-center h-full'>
                 <div className='bg-white col-start-1 md:col-start-2 w-full rounded-2xl shadow-lg'>

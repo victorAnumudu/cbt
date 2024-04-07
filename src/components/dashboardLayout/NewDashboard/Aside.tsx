@@ -110,7 +110,7 @@ const asideLinks:AsideLinksType = [
     {name: 'Legals', link: '/dashboard/legals', icon: 'legals', nestedLink:[]},
     {name: 'Nested Link', icon: 'home', nestedLink:[
         {name: 'Link 2', link: '/dashboard/not-found', icon: 'legals'}, 
-        {name: 'Link 1', link: '/dashboard/not-found', icon: 'home'}
+        {name: 'Link 1', link: '/dashboard/not-foun', icon: 'home'}
       ]
     },
 ]
