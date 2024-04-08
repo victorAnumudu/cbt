@@ -7,18 +7,18 @@ export default function PaymentsCom() {
     <div className="w-full">
       <PaginatedList
         data = {list}
-        itemsPerPage={10}
+        itemsPerPage={7}
         // filterItem={['name']}
         tableTitle='Payment History'
       >
         {
           ({data})=>(
-            <div className="w-full p-4 rounded-lg shadow-lg bg-white">
+            <div className="w-full p-4 rounded-lg shadow-lg bg-white overflow-x-auto">
               <table className="w-full text-left table-auto">
                 <thead>
                   <tr>
                     <th className="px-1 py-4">Image</th>
-                    <th className="px-1 py-4">ID</th>
+                    <th className="px-1 py-4 hidden md:block">ID</th>
                     <th className="px-1 py-4">Name</th>
                     <th className="px-1 py-4">Last Login</th>
                     <th className="px-1 py-4">Action</th>
@@ -32,7 +32,7 @@ export default function PaymentsCom() {
                           <img className="w-full h-full rounded-full" src={`../../../src/assets/avatar/${item.image}`} />
                         </div>
                       </td>
-                      <td className="p-1">{Math.random().toString().slice(2, 14)}</td>
+                      <td className="p-1 hidden md:block">{Math.random().toString().slice(2, 14)}</td>
                       <td className="p-1">{item.name}</td>
                       <td className="p-1">{item.last_login}</td>
                       <td className="p-1">
