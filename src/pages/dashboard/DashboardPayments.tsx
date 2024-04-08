@@ -1,6 +1,9 @@
+import PaymentsCom from "../../components/dashboardPages/PaymentsCom"
 
 export default function DashboardPayments() {
   return (
-    <div>DashboardPayments</div>
+    <div className="w-full">
+      <PaymentsCom />
+    </div>
   )
 }
