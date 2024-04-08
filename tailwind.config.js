@@ -8,8 +8,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xxs: "400px",
-        regLap: "1440px",
+        xxs: "350px",
         xxl: "1900px",
       }
     },
