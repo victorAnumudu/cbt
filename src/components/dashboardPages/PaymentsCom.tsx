@@ -2,6 +2,9 @@ import PaginatedList from "../listLayout/PaginatedList"
 
 import { list } from "../../data/data"
 
+import Image1 from '../../assets/avatar/avatar1.jpg'
+import Image2 from '../../assets/avatar/avatar2.png'
+
 export default function PaymentsCom() {
   return (
     <div className="w-full">
@@ -26,11 +29,11 @@ export default function PaymentsCom() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((item:{ id: number, name: string, last_login: string, image: string }) => (
+                  {data.map((item:{ id: number, name: string, last_login: string, image: string }, index:any) => (
                     <tr key={item.id} className="border-t cursor-pointer">
                       <td className="p-1">
                         <div className="w-10 h-10">
-                          <img className="w-full h-full rounded-full" src={`../../../src/assets/avatar/${item.image}`} />
+                          <img className="w-full h-full rounded-full" src={index%2==0 ? Image1 : Image2} />
                         </div>
                       </td>
                       <td className="p-1 hidden md:block">{Math.random().toString().slice(2, 14)}</td>
