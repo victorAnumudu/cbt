@@ -17,7 +17,7 @@ export default function CustomBox({title, desc, iconName}:Props) {
             }
         </div>
         <div>
-            <h1 className="text-black font-bold text-2xl">{desc}</h1>
+            <h1 className="text-black font-bold xxs:text-sm sm:text-base md:text-2xl">{desc}</h1>
         </div>
     </div>
   )

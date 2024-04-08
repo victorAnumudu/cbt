@@ -49,9 +49,9 @@ export default function Home() {
   return (
     <div className='w-full'>
       <p className='w-full text-3xl text-purple-600 font-medium tracking-wide'>Dashboard</p>
-      <div className='my-6 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+      <div className='my-6 w-full grid grid-cols-2 lg:grid-cols-4 gap-4'>
         {[1,2,3,4].map(item => (
-            <div key={item} className='w-full bg-white rounded-md shadow-md'>
+            <div key={item} className='w-full min-w-28 bg-white rounded-md shadow-md'>
                 <CustomBox title='Wallet' desc='NGN 40,600' iconName='legals' />
             </div>
         ))}
