@@ -7,6 +7,7 @@ type PaginatedListProps = {
     itemsPerPage: number,
     filterItem?: string[],
     tableTitle: string,
+    titleClass?:string,
     children: (data:any) => ReactNode;
 }
 
@@ -15,6 +16,7 @@ export default function PaginatedList({
   itemsPerPage = 5,
   filterItem,
   tableTitle,
+  titleClass,
   children,
 }:PaginatedListProps) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +59,7 @@ export default function PaginatedList({
 
   return (
     <div className="w-full">
-      <h1 className="text-2xl mb-5 font-semibold">{tableTitle}</h1>
+      <h1 className={`text-2xl mb-5 font-semibold ${titleClass && titleClass}`}>{tableTitle}</h1>
 
       {data.length > 0 && filterItem && (
         <div className="mb-10 flex justify-end items-center gap-2">

@@ -10,6 +10,7 @@ export default function PaymentsCom() {
         itemsPerPage={7}
         // filterItem={['name']}
         tableTitle='Payment History'
+        titleClass='text-purple-600'
       >
         {
           ({data})=>(

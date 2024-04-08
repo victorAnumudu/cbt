@@ -61,3 +61,10 @@ export const list = [
     {id:19, name:'Emeka Gabriel', last_login: '2024/03/02', image: 'avatar1.jpg'},
     {id:20, name:'Isreal Kate', last_login: '2024/04/01', image: 'avatar2.png'},
 ]
+
+export const summary = [
+    {name: 'Wallet', 'amount': '50,000', icon:'legals'},
+    {name: 'Revenue', 'amount': '66,000', icon:'profile'},
+    {name: 'Pending', 'amount': '10,000', icon:'legals'},
+    {name: 'Completed', 'amount': '75,000', icon:'verification'},
+]

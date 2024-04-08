@@ -5,6 +5,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import "chart.js/auto";
 
 import { CustomBox } from '../shared';
+import { summary } from '../../data/data';
 
 ChartJS.register(...registerables);
 
@@ -50,9 +51,9 @@ export default function Home() {
     <div className='w-full'>
       <p className='w-full text-3xl text-purple-600 font-medium tracking-wide'>Dashboard</p>
       <div className='my-6 w-full grid grid-cols-2 lg:grid-cols-4 gap-4'>
-        {[1,2,3,4].map(item => (
-            <div key={item} className='w-full min-w-28 bg-white rounded-md shadow-md'>
-                <CustomBox title='Wallet' desc='NGN 40,600' iconName='legals' />
+        {summary.map(item => (
+            <div key={item.name} className='w-full min-w-28 bg-white rounded-md shadow-md cursor-pointer hover:bg-white/50 transition-all duration-300'>
+                <CustomBox title={item.name} desc={`NGN ${item.amount}`} iconName={item.icon} />
             </div>
         ))}
       </div>
