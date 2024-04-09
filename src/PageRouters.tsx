@@ -23,7 +23,7 @@ export default function PageRouters() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<NewLogin />} />
         <Route element={<NewDashboard />}>
-          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/dashboard/home" element={<DashboardHome />} />
           <Route path="/dashboard/profile" element={<DashboardProfile />} />
           <Route path="/dashboard/verification" element={<DashboardVerification />} />
           <Route path="/dashboard/payments" element={<DashboardPayments />} />

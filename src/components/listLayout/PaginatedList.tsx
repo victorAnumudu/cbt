@@ -87,10 +87,10 @@ export default function PaginatedList({
 
       {/* show prev and next button if data exist */}
       {data.length > 0 && (
-        <div className="mt-10 w-full flex gap-4 justify-center items-center">
+        <div className="mt-5 md:mt-10 w-full flex gap-4 justify-center items-center">
         <button
           onClick={handlePrev}
-          className={`w-12 h-12 rounded-full flex justify-center items-center transition-all duration-300 ${
+          className={`w-6 h-6 md:w-12 md:h-12 text-sm md:text-lg rounded-full flex justify-center items-center transition-all duration-300 ${
             currentPage == 0
               ? "text-slate-400 border-slate-400 dark:text-slate-400 dark:border-slate-400 pointer-events-none"
               : "text-slate-600 border-slate-600 dark:text-white dark:border-white"
@@ -106,7 +106,7 @@ export default function PaginatedList({
               <button
                 key={index}
                 onClick={handleNext}
-                className={`w-12 h-12 rounded-full flex justify-center items-center border transition-all duration-300 ${
+                className={`w-6 h-6 md:w-12 md:h-12 text-sm md:text-lg rounded-full flex justify-center items-center border transition-all duration-300 ${
                   currentPage != index
                     ? "text-slate-400 border-slate-400 dark:text-slate-400 dark:border-slate-400"
                     : "text-slate-600 border-slate-600 dark:text-white dark:border-white pointer-events-none"
@@ -120,7 +120,7 @@ export default function PaginatedList({
 
         <button
           onClick={handleNext}
-          className={`w-12 h-12 rounded-full flex justify-center items-center transition-all duration-300 ${
+          className={`w-6 h-6 md:w-12 md:h-12 text-sm md:text-lg rounded-full flex justify-center items-center transition-all duration-300 ${
             currentPage + numberOfSelection >= data.length
               ? "text-slate-400 border-slate-400 dark:text-slate-400 dark:border-slate-400 pointer-events-none"
               : "text-slate-600 border-slate-600 dark:text-white dark:border-white"

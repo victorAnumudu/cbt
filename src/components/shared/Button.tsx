@@ -4,6 +4,7 @@ interface ButtonProps {
   text: string;
   className?: string;
   type?: "button" | "submit" | "reset";
+  disable?:boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -11,13 +12,15 @@ const Button: React.FC<ButtonProps> = ({
   text,
   className,
   onClick,
+  disable,
   type = "button",
 }) => {
   return (
     <button
-      className={`bg-purple-700 text-white font-normal text-sm lg:text-base p-[6px] lg:px-[10px] ${className}`}
-      onClick={onClick}
-      type={type}
+      className={`w-full bg-purple-700 text-white font-normal p-2 text-lg ${className && className}`}
+      onClick={onClick && onClick}
+      type={type && type}
+      disabled={disable && disable}
     >
       {text}
     </button>

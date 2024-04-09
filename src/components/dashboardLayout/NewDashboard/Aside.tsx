@@ -103,7 +103,7 @@ type AsideLinksType = {
     }[]
 }[]
 const asideLinks:AsideLinksType = [
-    {name: 'Home', link: '/dashboard', icon: 'home', nestedLink:[]},
+    {name: 'Home', link: '/dashboard/home', icon: 'home', nestedLink:[]},
     {name: 'My Profile', link: '/dashboard/profile', icon: 'profile', nestedLink:[]},
     {name: 'Verification', link: '/dashboard/verification', icon: 'verification', nestedLink:[]},
     {name: 'Payments', link: '/dashboard/payments', icon: 'payments', nestedLink:[]},

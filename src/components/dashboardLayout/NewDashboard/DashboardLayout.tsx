@@ -24,7 +24,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
   
 
   return (
-    <div className='w-full max-w-[2000px] mx-auto h-screen flex bg-[#020202] text-black'>
+    <div className='w-full max-w-[2000px] mx-auto h-full flex bg-[#020202] text-black'>
       <aside className='w-[300px] bg-white hidden md:block border-r-2 border-[#E6E6E6]'>
         <Aside />
       </aside>
@@ -33,7 +33,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
         <Aside asideDisplay={asideDisplay}/>
       </aside>
 
-      <main className={`dash-bg-image bg-[#F9F9F9] relative w-full overflow-y-auto overflow-x-hidden`}>
+      <main className={`dash-bg-image bg-[#F9F9F9] relative w-full h-full overflow-y-auto overflow-x-hidden`}>
           <header className={`p-5 sticky z-10 top-0 w-full bg-[#F9F9F9] border-b-2 border-[#E6E6E6] bg-[url('../../../../src/assets/images/dashboard/bg_ellipse1.png')] bg-no-repeat bg-[top_right]`}>
             <div className='h-14 w-full flex justify-end items-center gap-5'>
                 {/* <div className=''>
@@ -67,8 +67,8 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
                 </div>
             </div>
           </header>
-          <div className='flex p-5 relative'>
-            <div className='w-full p-2 md:p-5'>
+          <div className='w-full h-[calc(100vh_-_100px)] flex p-2 md:p-5 relative'>
+            <div className='h-full w-full'>
               {children}
             </div>
 

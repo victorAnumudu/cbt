@@ -34,7 +34,7 @@ body {
 
 @layer components {
   .containerMode {
-    @apply container mx-auto px-5 xxs:max-w-full sm:max-w-[98%] lg:max-w-[1100px];
+    @apply container mx-auto px-5;
   }
   .dash-bg-image{
     background: url('../src/assets/images/dashboard/bg_ellipse1.png') right top no-repeat, url('../src/assets/images/dashboard/bg_ellipse2.png') -8% bottom no-repeat;;

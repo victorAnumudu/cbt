@@ -7,7 +7,7 @@ import Image2 from '../../assets/avatar/avatar2.png'
 
 export default function PaymentsCom() {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <PaginatedList
         data = {list}
         itemsPerPage={7}
@@ -18,7 +18,7 @@ export default function PaymentsCom() {
         {
           ({data})=>(
             <div className="w-full p-4 rounded-lg shadow-lg bg-white overflow-x-auto">
-              <table className="w-full text-left table-auto">
+              <table className="w-full text-left text-sm md:text-lg table-auto">
                 <thead>
                   <tr>
                     <th className="px-1 py-4">Image</th>
