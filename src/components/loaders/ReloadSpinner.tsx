@@ -4,15 +4,15 @@ type Props = {
     timer?: boolean,
     timerClass?: string,
     size?: string,
-    spinnerColor?: string
+    // spinnerColor?: string
 }
 
-export default function ReloadSpinner({timer, timerClass, size='6', spinnerColor='[#5C2684]'}:Props) {
+export default function ReloadSpinner({timer, timerClass, size='6'}:Props) {
   
   let spinnerHeight = `h-${size}`;
   let spinnerWidth = `w-${size}`;
 //   let spinnerFill = `${spinnerColor}`
-// ${spinnerFill}
+// ${spinnerFill} spinnerColor='[#5C2684]'}
   
   
   const [time, setTime] =  useState(Number(import.meta.env.VITE_RELOAD_TIMER))
