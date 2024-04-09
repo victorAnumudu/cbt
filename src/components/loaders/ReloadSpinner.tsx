@@ -11,7 +11,7 @@ export default function ReloadSpinner({timer, timerClass, size='6', spinnerColor
   
   let spinnerHeight = `h-${size}`;
   let spinnerWidth = `w-${size}`;
-  let spinnerFill = `${spinnerColor}`
+//   let spinnerFill = `${spinnerColor}`
 // ${spinnerFill}
   
   
