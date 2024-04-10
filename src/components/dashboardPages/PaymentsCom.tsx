@@ -50,7 +50,7 @@ export default function PaymentsCom() {
       >
         {
           ({data})=>(
-            <div className="w-full p-4 rounded-lg shadow-lg bg-white overflow-x-auto">
+            <div className="w-full p-4 rounded-lg shadow-lg bg-white overflow-x-auto min-h-[450px]">
               <table className="w-full text-left text-sm md:text-lg table-auto">
                 <thead>
                   <tr>

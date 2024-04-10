@@ -25,7 +25,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         showAside={showAside}
         asideDisplay={asideDisplay}
       />
-      <div className='w-40 h-auto'>
+      <div className='w-40 h-auto md:hidden'>
         <img src={Img} alt='logo' /> 
         {/* <img src={imageGetter('Logo-header.svg')} alt='logo' />  */}
       </div>

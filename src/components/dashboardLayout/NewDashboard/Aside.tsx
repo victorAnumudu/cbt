@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import { Link, useLocation } from "react-router-dom";
 
+import Img from '../../../assets/images/Logo-header.svg'
+
 import { Icons } from "../../Icons";
 
 type Props = {
@@ -28,9 +30,12 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
   return (
     <div className="py-5 px-10 flex flex-col h-full bg-inherit">
       <div className="flex justify-center items-center text-sm">
-        <p className="w-14 h-14 rounded-full text-white bg-primary-default flex items-center justify-center">
+        {/* <p className="w-14 h-14 rounded-full text-white bg-primary-default flex items-center justify-center">
           AC
-        </p>
+        </p> */}
+        <div className="w-auto h-14 flex items-center justify-center">
+          <img src={Img} alt='logo' /> 
+        </div>
       </div>
       <div className="mt-10 h-full overflow-y-auto bg-inherit">
         {asideLinks.map((link, index) => {
