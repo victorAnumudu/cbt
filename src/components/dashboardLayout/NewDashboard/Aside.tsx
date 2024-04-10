@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import { Link, useLocation } from "react-router-dom";
 
-import { imageGetter } from '../../../utils';
+// import { imageGetter } from '../../../utils';
+import Img from '../../../assets/images/Logo-header.svg'
 
 import { Icons } from "../../Icons";
 
@@ -34,7 +35,8 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
           AC
         </p> */}
         <div className="w-auto h-14 flex items-center justify-center">
-          <img src={imageGetter('Logo-header.svg')} alt='logo' />
+          {/* <img src={imageGetter('Logo-header.svg')} alt='logo' /> */}
+          <img src={Img} alt='logo' /> 
         </div>
       </div>
       <div className="mt-10 h-full overflow-y-auto bg-inherit">

@@ -2,7 +2,9 @@ import { Icons } from "../../Icons";
 import HandBurger from "./HandBurger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { imageGetter } from "../../../utils";
+// import { imageGetter } from "../../../utils";
+
+import Img from '../../../assets/images/Logo-header.svg'
 
 type Props ={
     showAside: boolean,
@@ -25,8 +27,8 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         asideDisplay={asideDisplay}
       />
       <div className='w-40 h-auto md:hidden'>
-        {/* <img src={Img} alt='logo' />  */}
-        <img src={imageGetter('Logo-header.svg')} alt='logo' /> 
+        <img src={Img} alt='logo' /> 
+        {/* <img src={imageGetter('Logo-header.svg')} alt='logo' />  */}
       </div>
     </div>
     <div className='relative h-14 flex justify-end items-center gap-2 cursor-pointer' onClick={toggleDropDown}>
