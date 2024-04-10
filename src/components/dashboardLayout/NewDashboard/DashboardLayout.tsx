@@ -4,8 +4,7 @@ import Aside from './Aside'
 import LogoutModal from '../../popout/LogoutModal'
 import { useNavigate } from 'react-router-dom'
 import HandBurger from './HandBurger'
-// import { imageGetter } from '../../../utils'
-import Img from '../../../assets/images/Logo-header.svg'
+import Header from './Header'
 
 export default function DashboardLayout({children}:{children: ReactNode}) {
 
@@ -65,30 +64,10 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
       </aside>
 
       <main className={`dash-bg-image bg-[#F9F9F9] relative w-full h-full overflow-y-auto overflow-x-hidden`}>
-          <header className={`p-5 sticky z-10 top-0 w-full flex items-center justify-between bg-[#F9F9F9] border-b-2 border-[#E6E6E6] bg-[url('../../../../src/assets/images/dashboard/bg_ellipse1.png')] bg-no-repeat bg-[top_right]`}>
-            <div className='h-14 flex items-center gap-5'>
-              <HandBurger 
-                showAside={showAside}
-                asideDisplay={asideDisplay}
-              />
-              <div className='w-40 h-auto'>
-                <img src={Img} alt='logo' /> 
-                {/* <img src={imageGetter('Logo-header.svg')} alt='logo' />  */}
-              </div>
-            </div>
-            <div className='h-14 flex justify-end items-center gap-2'>
-                {/* <div className=''>
-                <button className='px-4 py-2 rounded-lg shadow-lg bg-white/50'>DarkMode</button>
-                </div> */}
-                {/* MENU HAND BURGER */}
-                <div className="flex justify-center items-center text-sm">
-                  <p className="w-14 h-14 rounded-full text-white bg-primary-default flex items-center justify-center">
-                    AC
-                  </p>
-                </div>
-                <div className='w-full'>Austin Catherine</div>
-            </div>
-          </header>
+          <Header
+            showAside={showAside}
+            asideDisplay={asideDisplay}
+          />
           <div className='w-full h-[calc(100vh_-_100px)] flex p-2 md:p-5 relative'>
             <div className='h-full w-full'>
               {children}
