@@ -16,7 +16,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
 
   const handleLogoutModal = ():any => {
     setLogoutModal(prev => !prev)
-    asideDisplay()
+    setShowAside(false)
   }
 
   const asideDisplay = ():void => { // TOGLES showASIDE VALUE
@@ -69,6 +69,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
           <Header
             showAside={showAside}
             asideDisplay={asideDisplay}
+            handleLogoutModal={handleLogoutModal}
           />
           <div className='w-full h-[calc(100vh_-_100px)] flex p-2 md:p-5 relative'>
             <div className='h-full w-full'>
