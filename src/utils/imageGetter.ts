@@ -1,5 +1,4 @@
 
-export const imageGetter = (path:string) =>{
-    return require(`../assets/images/${path}`)
-    // return path
+export const imageGetter = (path:string) => {
+    return `../../src/assets/images/${path}`
 }

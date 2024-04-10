@@ -1,9 +1,8 @@
 import { Icons } from "../../Icons";
-import Img from '../../../assets/images/Logo-header.svg'
 import HandBurger from "./HandBurger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import { imageGetter } from "../../../utils";
+import { imageGetter } from "../../../utils";
 
 type Props ={
     showAside: boolean,
@@ -26,8 +25,8 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         asideDisplay={asideDisplay}
       />
       <div className='w-40 h-auto md:hidden'>
-        <img src={Img} alt='logo' /> 
-        {/* <img src={imageGetter('Logo-header.svg')} alt='logo' />  */}
+        {/* <img src={Img} alt='logo' />  */}
+        <img src={imageGetter('Logo-header.svg')} alt='logo' /> 
       </div>
     </div>
     <div className='relative h-14 flex justify-end items-center gap-2 cursor-pointer' onClick={toggleDropDown}>
@@ -57,6 +56,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
               if(item.name == 'mode'){
                 return (
                 <button 
+                  key={item.name}
                   className="relative text-left w-full p-4 transition-all duration-300 after:absolute after:bg-primary-default after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:rounded-full after:contents-[''] hover:after:w-full after:transition-all after:duration-300 before:absolute before:bg-primary-default before:right-0 before:top-0 before:w-0 before:h-0.5 before:rounded-full before:contents-[''] hover:before:w-full before:transition-all before:duration-300" 
                 >
                   Dark mode
@@ -65,6 +65,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
               }else{
                 return (
                 <Link 
+                  key={item.name}
                   className="relative block text-left w-full p-4 transition-all duration-300 after:absolute after:bg-primary-default after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:rounded-full after:contents-[''] hover:after:w-full after:transition-all after:duration-300 before:absolute before:bg-primary-default before:right-0 before:top-0 before:w-0 before:h-0.5 before:rounded-full before:contents-[''] hover:before:w-full before:transition-all before:duration-300" 
                   to={item.link}
                 >
