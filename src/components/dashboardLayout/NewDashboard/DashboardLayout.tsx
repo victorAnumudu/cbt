@@ -16,6 +16,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
 
   const handleLogoutModal = ():any => {
     setLogoutModal(prev => !prev)
+    asideDisplay()
   }
 
   const asideDisplay = ():void => { // TOGLES showASIDE VALUE

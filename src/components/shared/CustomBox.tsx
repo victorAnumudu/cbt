@@ -13,7 +13,8 @@ export default function CustomBox({title, desc, iconName}:Props) {
         <div className="w-full flex justify-between items-center">
             <h3>{title}</h3>
             {iconName &&
-              <Icons name={iconName} fillColor="#5C2684" />
+              // <Icons name={iconName} fillColor="#5C2684" />
+              <Icons name={iconName} fillColor="#0F6C96" />
             }
         </div>
         <div>

@@ -59,7 +59,7 @@ body {
     @apply text-white dark:text-red-500
   }
   .modal-body { 
-    @apply w-full p-5 min-h-[300px] max-h-[500px] overflow-y-auto flex flex-col justify-center items-center
+    @apply w-full p-5 min-h-[150px] max-h-[500px] overflow-y-auto flex flex-col justify-center items-center
   }
   .modal-footer { 
     @apply w-full p-5 border-t flex justify-evenly items-center gap-4
