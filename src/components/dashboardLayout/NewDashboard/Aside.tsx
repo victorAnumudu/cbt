@@ -1,17 +1,16 @@
 import {useState} from 'react'
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { Icons } from "../../Icons";
 
 type Props = {
   asideDisplay?: () => void
+  handleLogoutModal: () => void
 }
 
-export default function Aside({asideDisplay}:Props) {
+export default function Aside({asideDisplay, handleLogoutModal}:Props) {
 
   const {pathname} = useLocation()
-
-  const navigate = useNavigate()
 
   const [openNestedLink, setOpenNestedLink] = useState<{name:string|null}>({name: ''})
 
@@ -29,7 +28,7 @@ export default function Aside({asideDisplay}:Props) {
   return (
     <div className="py-5 px-10 flex flex-col h-full bg-inherit">
       <div className="flex justify-center items-center text-sm">
-        <p className="w-14 h-14 rounded-full bg-[#5C2684]/50 flex items-center justify-center">
+        <p className="w-14 h-14 rounded-full text-white bg-primary-default flex items-center justify-center">
           AC
         </p>
       </div>
@@ -58,7 +57,7 @@ export default function Aside({asideDisplay}:Props) {
                       onClick={()=>{asideDisplay && asideDisplay()}}
                       key={index}
                       to={nextLink.link ? nextLink.link : '#'}
-                      className={`w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-[#5C2684] text-[#5C2684]' : 'border-transparent text-[#585858]'}`}
+                      className={`w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-primary-default text-primary-default' : 'border-transparent text-[#585858]'}`}
                     >
                     <Icons name={nextLink.icon} fillColor={`${pathname == nextLink.link ? '#5C2684' : '#585858'}`} />
                     {nextLink.name}
@@ -73,7 +72,7 @@ export default function Aside({asideDisplay}:Props) {
                 onClick={()=>{asideDisplay && asideDisplay()}}
                 key={index}
                 to={link.link ? link.link : '#'}
-                className={`w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-[#5C2684] text-[#5C2684]' : 'border-transparent text-[#585858]'}`}
+                className={`w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-primary-default text-primary-default' : 'border-transparent text-[#585858]'}`}
               >
               <Icons name={link.icon} fillColor={`${pathname == link.link ? '#5C2684' : '#585858'}`} />
               {link.name}
@@ -83,7 +82,7 @@ export default function Aside({asideDisplay}:Props) {
         })}
       </div>
       <div className="w-full flex justify-center items-center">
-        <button className="py-3 px-6 bg-red-100 text-red-500 font-medium rounded-md" onClick={()=>navigate('/login', {replace:true})}>
+        <button className="w-full py-3 px-6 bg-red-100 text-red-500 font-medium rounded-md" onClick={()=>handleLogoutModal()}>
           Log out
         </button>
       </div>

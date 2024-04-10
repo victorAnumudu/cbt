@@ -50,7 +50,7 @@ export default function Home() {
     ],
   };
 
-  const [openDashboard, setOpenDashboard] = useState<boolean|null>(false)
+  const [openDashboard, setOpenDashboard] = useState<boolean|null>(true)
   const handleOpenDash = () => {
     setOpenDashboard(null)
     setTimeout(()=>{
@@ -62,7 +62,7 @@ export default function Home() {
     <div className='w-full h-full'>
       {!openDashboard ?
         <div className='w-full h-full flex flex-col justify-center items-center'>
-          <div className='p-8 bg-white w-full max-w-96 h-72 shadow-[0px_0px_10px_#5C2684] rounded-2xl flex flex-col justify-center items-center gap-8'>
+          <div className='p-8 bg-white w-2/3 md:w-full max-w-96 h-72 shadow-[0px_0px_10px_#5C2684] rounded-2xl flex flex-col justify-center items-center gap-8'>
             <p className='text-[#5C2684] text-lg md:text-xl lg:text-2xl'>Welcome Austin Catherine</p>
             {openDashboard == false ?
             <Button 
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       :
         <>
-          <p className='w-full text-3xl text-purple-600 font-medium tracking-wide'>Dashboard</p>
+          <p className='w-full text-3xl text-primary-default font-medium tracking-wide'>Dashboard</p>
           <div className='my-6 w-full grid grid-cols-2 lg:grid-cols-4 gap-4'>
             {summary.map(item => (
                 <div key={item.name} className='w-full min-w-28 bg-white rounded-md shadow-md cursor-pointer hover:bg-white/50 transition-all duration-300'>

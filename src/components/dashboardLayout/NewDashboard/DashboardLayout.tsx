@@ -1,13 +1,33 @@
-import { ReactNode, useState, useEffect } from 'react'
+import { ReactNode, useState, useEffect, MouseEvent } from 'react'
 
 import Aside from './Aside'
+import LogoutModal from '../../popout/LogoutModal'
+import { useNavigate } from 'react-router-dom'
 
 export default function DashboardLayout({children}:{children: ReactNode}) {
 
-  const [showAside, setShowAside] = useState<boolean>(false)
+  const navigate = useNavigate()
+
+  const [showAside, setShowAside] = useState<boolean>(false) // indicates when to show aside bar on mobile screen
+
+  const [logoutModal, setLogoutModal] = useState<boolean>(false)
+
+  const handleLogoutModal = ():any => {
+    setLogoutModal(prev => !prev)
+  }
 
   const asideDisplay = ():void => {
     setShowAside(prev => !prev)
+  }
+
+  const logoutUser = (e:MouseEvent) => {
+    let {name} = e?.target as HTMLInputElement
+    if(name == 'cancel'){
+      handleLogoutModal()
+    }else{
+      handleLogoutModal()
+      navigate('/login', {replace:true})
+    }
   }
 
   useEffect(() => {
@@ -26,11 +46,11 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
   return (
     <div className='w-full max-w-[2000px] mx-auto h-full flex bg-[#020202] text-black'>
       <aside className='w-[300px] bg-white hidden md:block border-r-2 border-[#E6E6E6]'>
-        <Aside />
+        <Aside handleLogoutModal={handleLogoutModal} />
       </aside>
 
       <aside className={`w-[300px] md:hidden bg-white border-r-2 border-[#E6E6E6] fixed top-0 bottom-0 z-50 transition-all duration-500 ${showAside ? 'left-0' : '-left-[200%]'}`}>
-        <Aside asideDisplay={asideDisplay}/>
+        <Aside handleLogoutModal={handleLogoutModal} asideDisplay={asideDisplay}/>
       </aside>
 
       <main className={`dash-bg-image bg-[#F9F9F9] relative w-full h-full overflow-y-auto overflow-x-hidden`}>
@@ -86,6 +106,13 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
             </div> */}
           </div>
       </main>
+
+      {logoutModal && (
+        <LogoutModal
+          onClose={()=>setLogoutModal(false)}
+          handleFunction={logoutUser}
+        />
+      )}
     </div>
   )
 }

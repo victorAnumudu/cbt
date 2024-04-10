@@ -10,6 +10,13 @@ export default {
       screens: {
         xxs: "350px",
         xxl: "1900px",
+      },
+      colors: {
+        primary: {
+          default: '#5C2684',
+          light: 'rgba(92,38,132,0.8)',
+          dark: ''
+        }
       }
     },
   },

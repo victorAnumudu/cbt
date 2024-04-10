@@ -39,4 +39,42 @@ body {
   .dash-bg-image{
     background: url('../src/assets/images/dashboard/bg_ellipse1.png') right top no-repeat, url('../src/assets/images/dashboard/bg_ellipse2.png') -8% bottom no-repeat;;
   }
+  .custom-btn{@apply min-w-[100px] transition-all duration-300 p-2 rounded-full}
+
+  /* MODAL COMPONENT */
+  .modal-container{
+    animation-name: zoom;
+    animation-duration: .2s;
+    animation-timing-function: linear;
+    @apply w-4/5 max-w-[600px] bg-white shadow-md rounded-2xl overflow-hidden
+    
+  }
+  .modal-header { 
+    @apply w-full flex items-center justify-between p-5 py-8 border-b bg-primary-default
+  }
+  .modal-title { 
+    @apply text-2xl leading-8 font-bold text-white dark:text-white tracking-wide flex items-center
+  }
+  .modal-close-btn { 
+    @apply text-white dark:text-red-500
+  }
+  .modal-body { 
+    @apply w-full p-5 min-h-[300px] max-h-[500px] overflow-y-auto flex flex-col justify-center items-center
+  }
+  .modal-footer { 
+    @apply w-full p-5 border-t flex justify-evenly items-center gap-4
+  }
+  /* MODAL COMPONENT */
+}
+
+
+@layer utilities {
+
+  /* ANIMATIONS */
+  @keyframes zoom {
+    0%{transform: scale(1)}
+    50%{transform: scale(1.03);}
+    100%{transform: scale(1);}
+  }
+
 }
