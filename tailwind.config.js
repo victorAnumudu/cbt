@@ -13,8 +13,11 @@ export default {
       },
       colors: {
         primary: {
-          default: '#5C2684',
-          light: 'rgba(92,38,132,0.8)',
+          // default: '#5C2684',
+          // light: 'rgba(92,38,132,0.8)',
+          // dark: ''
+          default: '#0F6C96',
+          light: 'rgba(15,108,150,0.8)',
           dark: ''
         }
       }
