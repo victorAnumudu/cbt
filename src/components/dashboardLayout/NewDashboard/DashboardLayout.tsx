@@ -54,10 +54,11 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
       <aside className={`w-full md:hidden bg-white/70 fixed top-0 bottom-0 z-50 transition-all duration-500 ${showAside ? 'left-0' : '-left-[200%]'}`}>
         <div className={`relative w-[80%] max-w-[300px] h-full bg-white border-r-2 border-[#E6E6E6]`}>
           <Aside handleLogoutModal={handleLogoutModal} asideDisplay={asideDisplay} />
-          <div className='absolute -right-8 top-8'>
+          <div className='absolute -right-10 top-8 bg-primary-default p-2 flex justify-center items-center rounded-lg'>
             <HandBurger 
               showAside={showAside}
               asideDisplay={asideDisplay}
+              barColor='bg-white'
             />
           </div>
         </div>
