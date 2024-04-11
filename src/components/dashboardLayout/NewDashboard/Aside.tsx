@@ -48,14 +48,13 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                 <button
                     name={link.name} 
                     onClick={(e)=>handleOpenNestedLink(e)}
-                    className={`py-2 pl-2 text-left relative w-full overflow-hidden rounded-lg border-2 flex justify-between items-center z-10 bg-inherit ${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`} 
+                    className={`transition-all duration-300 py-2 pl-2 text-left relative w-full overflow-hidden rounded-lg border-2 flex justify-between items-center z-10 bg-inherit ${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? 'border-primary text-primary' : 'border-transparent text-slate-700'}`} 
                 >
                   {link.name}
-                  <div className={`mr-2 ${openNestedLink.name == link.name ? '-rotate-90' : 'rotate-90'} transition-all duration-300`}>
+                  <div className={`mr-2 ${openNestedLink.name == link.name ? '-rotate-180' : 'rotate-0'} transition-all duration-300`}>
                     <Icons 
                       name='greater-than' 
-                      // fillColor={`${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? '#5C2684' : '#585858'}`} 
-                      fillColor={`${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? '#0F6C96' : '#585858'}`} 
+                      className={`transition-all duration-300 ${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? 'text-primary' : 'text-slate-700'}`} 
                     />
                   </div>
                 </button>
@@ -65,12 +64,11 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                       onClick={()=>{asideDisplay && asideDisplay()}}
                       key={index}
                       to={nextLink.link ? nextLink.link : '#'}
-                      className={`w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`}
+                      className={`transition-all duration-300 w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-primary text-primary' : 'border-transparent text-slate-700'}`}
                     >
                     <Icons 
                       name={nextLink.icon} 
-                      // fillColor={`${pathname == nextLink.link ? '#5C2684' : '#585858'}`} 
-                      fillColor={`${pathname == nextLink.link ? '#0F6C96' : '#585858'}`}
+                      className={`transition-all duration-300 ${pathname == nextLink.link ? 'text-primary' : 'text-slate-700'}`}
                     />
                     {nextLink.name}
                     </Link>
@@ -84,12 +82,11 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                 onClick={()=>{asideDisplay && asideDisplay()}}
                 key={index}
                 to={link.link ? link.link : '#'}
-                className={`w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`}
+                className={`transition-all duration-300 w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-primary text-primary' : 'border-transparent text-slate-700'}`}
               >
               <Icons 
                 name={link.icon} 
-                // fillColor={`${pathname == link.link ? '#5C2684' : '#585858'}`} 
-                fillColor={`${pathname == link.link ? '#0F6C96' : '#585858'}`}
+                className={`transition-all duration-300 ${pathname == link.link ? 'text-primary' : 'text-slate-700'}`}
               />
               {link.name}
               </Link>

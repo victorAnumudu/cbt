@@ -3,6 +3,8 @@ import HandBurger from "./HandBurger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { userContext } from "../../../context/UserContext";
+
+import { FaBeer } from "react-icons/fa";
 // import { imageGetter } from "../../../utils";
 
 import Img from '../../../assets/images/Logo-header.svg'
@@ -34,6 +36,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         {/* <img src={imageGetter('Logo-header.svg')} alt='logo' />  */}
       </div>
     </div>
+
     <div className={`relative h-14 flex justify-end items-center gap-2 cursor-pointer`} onClick={toggleDropDown}>
         {/* MENU HAND BURGER */}
         <div className="relative z-20 flex justify-center items-center text-sm">
@@ -43,10 +46,10 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         </div>
         <div className='relative z-20 w-full flex justify-start items-center gap-2'>
           <p className='text-primary hidden sm:flex dark:text-dark-light'>Austin Catherine</p>
-          <div className={`${openDropDown ? '-rotate-90' : 'rotate-90'} transition-all duration-300`}>
+          <div className={`${openDropDown ? '-rotate-180' : 'rotate-0'} transition-all duration-300`}>
             <Icons 
               name='greater-than' 
-              fillColor={`${true ? '#0F6C96' : '#585858'}`} 
+              className={`transition-all duration-300 text-primary dark:text-slate-700`}  
             />
           </div>
         </div>
