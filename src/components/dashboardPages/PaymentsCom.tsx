@@ -63,7 +63,7 @@ export default function PaymentsCom() {
                 </thead>
                 <tbody>
                   {data.map((item:{ id: number, name: string, last_login: string, image: string }, index:any) => (
-                    <tr key={item.id} className="border-t cursor-pointer">
+                    <tr key={item.id} className={`border-t cursor-pointer ${index%2 != 0 && 'bg-red-50'}`}>
                       <td className="p-1">
                         <div className="w-10 h-10">
                           <img className="w-full h-full rounded-full" src={index%2==0 ? Image1 : Image2} />

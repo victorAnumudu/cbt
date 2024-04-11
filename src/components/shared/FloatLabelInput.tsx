@@ -25,7 +25,7 @@ export default function FloatLabelInput({
         <input
             id={id ? id : ''}
             name={name? name : ''}
-            className={`peer pr-8 w-full h-12 outline-none border-b-2 border-b-[#5A2C82] placeholder:text-transparent transition-all duration-500 ${inputClass && inputClass}`}
+            className={`peer pr-8 w-full h-12 outline-none border-b-2 border-b-primary-default bg-transparent placeholder:text-transparent transition-all duration-500 ${inputClass && inputClass}`}
             type={type ? type : 'text'}
             placeholder={placeHolder ? placeHolder : ''}
             value={value}

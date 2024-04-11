@@ -3,7 +3,7 @@ import PageRouters from "./PageRouters"
 export default function App() {
 
   return (
-    <div className="max-w-[2000px] mx-auto h-screen">
+    <div className="h-screen">
       <PageRouters />
     </div>
   )
