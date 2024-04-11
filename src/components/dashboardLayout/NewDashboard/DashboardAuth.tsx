@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function DashboardAuth():any {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   let {userDetails, setUserDetails}:any = userContext()
 
