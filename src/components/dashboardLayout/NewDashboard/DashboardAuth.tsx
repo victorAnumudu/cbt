@@ -54,7 +54,7 @@ export default function DashboardAuth():any {
       <div className="w-full h-screen flex flex-col justify-center items-center bg-slate-200">
         <div className="w-full flex flex-col items-center justify-center">
           <img src={Logo} className="max-w-sm" />
-          <ReloadSpinner size="10" fillColor='fill-primary-default' />
+          <ReloadSpinner size="10" fillColor='fill-primary' />
         </div>
       </div>
       :!pageLoading && !userExist ?

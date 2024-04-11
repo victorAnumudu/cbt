@@ -41,7 +41,7 @@ export default function PageRouters() {
           <Route path="/dashboard/payments" element={<DashboardPayments />} />
           <Route path="/dashboard/legals" element={<DashboardLegals />} />
           <Route
-            path="/dashboard*"
+            path="/dashboard/*"
             element={<p>Page Not Found! Error 404</p>}
           />
         </Route>

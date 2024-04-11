@@ -83,10 +83,10 @@ export default function Home() {
         </div>
       :
         <>
-          <p className='w-full text-3xl text-primary-default font-medium tracking-wide'>Dashboard</p>
+          <p className='w-full text-3xl text-primary font-medium tracking-wide'>Dashboard</p>
           <div className='my-6 w-full grid grid-cols-2 lg:grid-cols-4 gap-4'>
             {summary.map(item => (
-                <div key={item.name} className='w-full min-w-28 bg-white rounded-md shadow-md cursor-pointer hover:bg-white/50 transition-all duration-300'>
+                <div key={item.name} className='mode-transition w-full min-w-28 bg-white dark:bg-white/50 dark:text-black rounded-md shadow-md cursor-pointer hover:bg-white/50 transition-all duration-300'>
                     <CustomBox title={item.name} desc={`NGN ${item.amount}`} iconName={item.icon} />
                 </div>
             ))}

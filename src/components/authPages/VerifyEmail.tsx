@@ -69,7 +69,7 @@ export default function VerifyEmail() {
   return (
     <>
       <div className="mb-4">
-        <h1 className="text-2xl text-center font-bold leading-3 tracking-wide text-primary-default dark:text-black">
+        <h1 className="text-2xl text-center font-bold leading-3 tracking-wide text-primary dark:text-black">
           Verify Email
         </h1>
         <img src={Logo} className="w-full max-w-xs h-auto" alt='Logo' />
@@ -97,7 +97,7 @@ export default function VerifyEmail() {
 
         <div className="mt-10 w-full">
             {requestStatus.loading ?
-                <ReloadSpinner size="10" fillColor='fill-primary-default' />
+                <ReloadSpinner size="10" fillColor='fill-primary' />
             :
                 <Button onClick={handleSubmit} disable={requestStatus.loading} text="Proceed" className="rounded-full w-full" />
             }

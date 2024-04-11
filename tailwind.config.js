@@ -16,9 +16,13 @@ export default {
           // default: '#5C2684',
           // light: 'rgba(92,38,132,0.8)',
           // dark: ''
-          default: '#0F6C96',
+          DEFAULT: 'rgba(15,108,150,1)',
           light: 'rgba(15,108,150,0.8)',
           dark: ''
+        },
+        dark:{
+          DEFAULT: 'rgba(15,23,42)',
+          light: 'rgb(148,163,184)'
         }
       }
     },

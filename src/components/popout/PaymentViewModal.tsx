@@ -48,7 +48,7 @@ export default function PaymentViewModal({
       </div>
       <div className='hidden modal-footer'>
         <button onClick={handleFunction} name='cancel' className='custom-btn text-red-500 border border-red-500'>Cancel</button>
-        <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary-default hover:bg-primary-light'>Yes</button>
+        <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary hover:bg-primary-light'>Yes</button>
       </div>
     </div>
   </Modal>

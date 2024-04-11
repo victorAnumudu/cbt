@@ -48,7 +48,7 @@ export default function PaymentDeleteModal({
       </div>
       <div className='modal-footer'>
         <button onClick={handleFunction} name='cancel' className='custom-btn text-red-500 border border-red-500'>Cancel</button>
-        <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary-default hover:bg-primary-light'>Delete</button>
+        <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary hover:bg-primary-light'>Delete</button>
       </div>
     </div>
   </Modal>

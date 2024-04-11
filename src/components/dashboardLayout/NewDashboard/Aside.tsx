@@ -29,9 +29,9 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
   }
 
   return (
-    <div className="py-5 px-10 flex flex-col h-full bg-inherit">
+    <div className="py-5 px-10 flex flex-col h-full">
       <div className="flex justify-center items-center text-sm">
-        {/* <p className="w-14 h-14 rounded-full text-white bg-primary-default flex items-center justify-center">
+        {/* <p className="w-14 h-14 rounded-full text-white bg-primary flex items-center justify-center">
           AC
         </p> */}
         <div className="w-auto h-14 flex items-center justify-center">
@@ -39,7 +39,7 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
           <img src={Img} alt='logo' /> 
         </div>
       </div>
-      <div className="mt-10 h-full overflow-y-auto bg-inherit">
+      <div className="mt-10 h-full overflow-y-auto">
         {asideLinks.map((link, index) => {
           if(link.nestedLink?.length){
             let allNestedLinks = link.nestedLink.map(item => item.link)
@@ -48,7 +48,7 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                 <button
                     name={link.name} 
                     onClick={(e)=>handleOpenNestedLink(e)}
-                    className={`py-2 pl-2 text-left relative w-full overflow-hidden rounded-lg border-2 flex justify-between items-center z-10 bg-inherit ${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? 'border-primary-default text-primary-default' : 'border-transparent text-[#585858]'}`} 
+                    className={`py-2 pl-2 text-left relative w-full overflow-hidden rounded-lg border-2 flex justify-between items-center z-10 bg-inherit ${openNestedLink.name==link.name || allNestedLinks.includes(pathname) ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`} 
                 >
                   {link.name}
                   <div className={`mr-2 ${openNestedLink.name == link.name ? '-rotate-90' : 'rotate-90'} transition-all duration-300`}>
@@ -65,7 +65,7 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                       onClick={()=>{asideDisplay && asideDisplay()}}
                       key={index}
                       to={nextLink.link ? nextLink.link : '#'}
-                      className={`w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-primary-default text-primary-default' : 'border-transparent text-[#585858]'}`}
+                      className={`w-full my-1 flex items-center gap-2 py-2 pl-5 text-base font-medium border-l-2 ${pathname == nextLink.link ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`}
                     >
                     <Icons 
                       name={nextLink.icon} 
@@ -84,7 +84,7 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
                 onClick={()=>{asideDisplay && asideDisplay()}}
                 key={index}
                 to={link.link ? link.link : '#'}
-                className={`w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-primary-default text-primary-default' : 'border-transparent text-[#585858]'}`}
+                className={`w-full my-4 flex items-center gap-2 py-2 pl-5 rounded-lg text-base font-medium border-2 ${pathname == link.link ? 'border-primary text-primary' : 'border-transparent text-[#585858]'}`}
               >
               <Icons 
                 name={link.icon} 
@@ -98,7 +98,7 @@ export default function Aside({asideDisplay, handleLogoutModal}:Props) {
         })}
       </div>
       <div className="w-full flex justify-center items-center">
-        <button className="w-full py-3 px-6 bg-red-100 text-red-500 font-medium rounded-md" onClick={()=>handleLogoutModal()}>
+        <button className="w-full py-3 px-6 bg-red-100 dark:bg-red-100/50 text-red-500 dark:text-black font-medium rounded-md" onClick={()=>handleLogoutModal()}>
           Log out
         </button>
       </div>

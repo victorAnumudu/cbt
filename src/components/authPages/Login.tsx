@@ -76,7 +76,7 @@ export default function Login() {
   return (
     <>
       <div className="mb-4">
-        <h1 className="text-2xl text-center font-bold leading-3 tracking-wide text-primary-default dark:text-black">
+        <h1 className="text-2xl text-center font-bold leading-3 tracking-wide text-primary dark:text-black">
           Welcome!
         </h1>
         <img src={Logo} className="w-full max-w-xs h-auto" alt='Logo' />
@@ -121,14 +121,14 @@ export default function Login() {
           <p className={`w-full text-center ${requestStatus.status ? 'text-emerald-600' : 'text-red-600'} ${requestStatus.message ? 'block' : 'hidden'}`}>{requestStatus.message}</p>
 
             {requestStatus.loading ?
-                <ReloadSpinner size="10" fillColor='fill-primary-default' />
+                <ReloadSpinner size="10" fillColor='fill-primary' />
             :
                 <Button onClick={handleSubmit} disable={requestStatus.loading} text="Login" className="rounded-full w-full" />
             }
         </div>
         <p className="mt-2 w-full text-black flex items-center justify-center gap-2">
             Don't have account?
-            <Link to="/register" className="text-primary-default text-sm">
+            <Link to="/register" className="text-primary text-sm">
                 Register
             </Link>
         </p>

@@ -47,15 +47,15 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
   
 
   return (
-    <div className='w-full max-w-[2000px] mx-auto h-full flex bg-[#020202] text-black'>
-      <aside className='w-[300px] bg-white hidden md:block border-r-2 border-[#E6E6E6]'>
+    <div className='w-full max-w-[2000px] mx-auto h-full flex dark:text-dark-light text-black'>
+      <aside className='mode-transition w-[300px] bg-white dark:bg-dark hidden md:block border-r-2 border-[#E6E6E6]'>
         <Aside handleLogoutModal={handleLogoutModal} />
       </aside>
 
-      <aside className={`w-full md:hidden bg-white/70 fixed top-0 bottom-0 z-50 transition-all duration-500 ${showAside ? 'left-0' : '-left-[200%]'}`}>
-        <div className={`relative w-[80%] max-w-[300px] h-full bg-white border-r-2 border-[#E6E6E6]`}>
+      <aside className={`mode-transition w-full md:hidden bg-white/70 dark:bg-dark/70 fixed top-0 bottom-0 z-50 transition-all duration-500 ${showAside ? 'left-0' : '-left-[200%]'}`}>
+        <div className={`mode-transition relative w-[80%] max-w-[300px] h-full bg-white dark:bg-dark border-r-2 border-dark-light`}>
           <Aside handleLogoutModal={handleLogoutModal} asideDisplay={asideDisplay} />
-          <div className='absolute -right-10 top-8 bg-primary-default p-2 flex justify-center items-center rounded-lg'>
+          <div className='absolute -right-10 top-8 bg-primary p-2 flex justify-center items-center rounded-lg'>
             <HandBurger 
               showAside={showAside}
               asideDisplay={asideDisplay}
@@ -65,7 +65,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
         </div>
       </aside>
 
-      <main className={`dash-bg-image bg-[#F9F9F9] relative w-full h-full overflow-y-auto overflow-x-hidden`}>
+      <main className={`mode-transition dash-bg-image bg-[#F9F9F9] dark:bg-dark relative w-full h-full overflow-y-auto overflow-x-hidden`}>
           <Header
             showAside={showAside}
             asideDisplay={asideDisplay}

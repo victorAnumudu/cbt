@@ -46,7 +46,7 @@ export default function PaymentsCom() {
         itemsPerPage={7}
         // filterItem={['name']}
         tableTitle='Payment History'
-        titleClass='text-primary-default'
+        titleClass='text-primary'
       >
         {
           ({data})=>(
@@ -74,7 +74,7 @@ export default function PaymentsCom() {
                       <td className="p-1">{item.last_login}</td>
                       <td className="p-1">
                         <div className="flex items-center gap-2">
-                          <button onClick={()=>openModal('edit', item)} name='edit' className="text-[10px] bg-primary-default text-white shadow-md rounded-lg px-2 py-.5">Edit</button>
+                          <button onClick={()=>openModal('edit', item)} name='edit' className="text-[10px] bg-primary text-white shadow-md rounded-lg px-2 py-.5">Edit</button>
                           <button onClick={()=>openModal('delete', item)} name='delete' className="text-[10px] bg-red-500 text-white shadow-md rounded-lg px-2 py-.5">Delete</button>
                           <button onClick={()=>openModal('view', item)} name='view' className="text-[10px] bg-sky-500 text-white shadow-md rounded-lg px-2 py-.5">View</button>
                         </div>

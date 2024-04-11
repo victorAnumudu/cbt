@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`w-full bg-primary-default text-white font-normal p-2 text-lg ${className && className}`}
+      className={`w-full bg-primary text-white font-normal p-2 text-lg ${className && className}`}
       onClick={onClick && onClick}
       type={type && type}
       disabled={disable && disable}
