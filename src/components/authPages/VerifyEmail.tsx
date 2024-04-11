@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, FloatLabelInput } from "../shared";
-import { Link } from "react-router-dom";
 
 import Logo from '../../../src/assets/images/Logo-header.svg'
 import ReloadSpinner from "../loaders/ReloadSpinner";
