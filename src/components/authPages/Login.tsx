@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Button, FloatLabelInput } from "../shared";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ReloadSpinner from "../loaders/ReloadSpinner";
+import Cookies from 'js-cookie'
+import { userContext } from "../../context/UserContext";
 
 import Logo from '../../../src/assets/images/Logo-header.svg'
+import axios from "axios";
 
 type FormType = {
   email: string;
@@ -17,10 +20,15 @@ type HandleChange = {
 
 export default function Login() {
   
+  const navigate = useNavigate()
+
+  const {setUserDetails}:any = userContext()
+  
   let [requestStatus, setRequestStatus] = useState({
     loading: false,
     data: [],
-    status: false
+    status: false,
+    message: ''
   })
 
   let [formDetails, setFormDetails] = useState<FormType>({
@@ -38,17 +46,31 @@ export default function Login() {
 
   const handleSubmit = () => {
     setRequestStatus({
-        loading: true,
-        data: [],
-        status: false
-      })
-      setTimeout(()=>{
-        setRequestStatus({
-            loading: false,
-            data: [],
-            status: false
-          })
-      },2000)
+      loading: true,
+      data: [],
+      status: false,
+      message: ''
+    })
+  axios.post('https://convene-backend.onrender.com/users/login', formDetails).then((res)=>{
+    if(!res.data.status){
+      setRequestStatus({ loading: false, data: [], status: false, message: res.data.message})
+      return
+    }
+    // console.log('TOken', res.data.data.token)
+    // console.log('Response', res.data.data.data)
+    Cookies.set('token', res.data.data.token)
+    setUserDetails(res.data.data.data)
+    setRequestStatus({ loading: false, data: res.data.data, status: true, message: res.data.message})
+    setTimeout(()=>{
+      navigate('/dashboard/home', {replace: true})
+    }, 2000)
+  }).catch((err:any)=>{
+    console.log('ERROR', err.response)
+    setRequestStatus({ loading: false, data: [], status: false, message: err.response.data.message})
+    setTimeout(()=>{
+      setRequestStatus({ loading: false, data: [], status: false, message: ''})
+    }, 5000)
+  })
   }
 
   return (
@@ -96,6 +118,8 @@ export default function Login() {
         </Link>
 
         <div className="mt-10 w-full">
+          <p className={`w-full text-center ${requestStatus.status ? 'text-emerald-600' : 'text-red-600'} ${requestStatus.message ? 'block' : 'hidden'}`}>{requestStatus.message}</p>
+
             {requestStatus.loading ?
                 <ReloadSpinner size="10" fillColor='fill-primary-default' />
             :

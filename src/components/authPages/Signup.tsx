@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, FloatLabelInput } from "../shared";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import Logo from '../../../src/assets/images/Logo-header.svg'
 import ReloadSpinner from "../loaders/ReloadSpinner";
@@ -8,7 +9,7 @@ import ReloadSpinner from "../loaders/ReloadSpinner";
 type FormType = {
   email: string,
   password: string,
-  name: string
+  name: string,
 };
 
 type HandleChange = {
@@ -18,10 +19,13 @@ type HandleChange = {
 
 export default function Signup() {
 
+  const navigate = useNavigate()
+
   let [requestStatus, setRequestStatus] = useState({
     loading: false,
     data: [],
-    status: false
+    status: false,
+    message: ''
   })
 
   let [formDetails, setFormDetails] = useState<FormType>({
@@ -42,15 +46,25 @@ export default function Signup() {
     setRequestStatus({
         loading: true,
         data: [],
-        status: false
+        status: false,
+        message: ''
       })
+    axios.post('https://convene-backend.onrender.com/users', formDetails).then((res)=>{
+      if(!res.data.status){
+        setRequestStatus({ loading: false, data: [], status: false, message: res.data.message})
+        return
+      }
+      setRequestStatus({ loading: false, data: res.data.data, status: true, message: res.data.message})
       setTimeout(()=>{
-        setRequestStatus({
-            loading: false,
-            data: [],
-            status: false
-          })
-      },2000)
+        navigate('/login', {replace: true})
+      }, 2000)
+    }).catch((err:any)=>{
+      console.log('ERROR', err.response)
+      setRequestStatus({ loading: false, data: [], status: false, message: err.response.data.message})
+      setTimeout(()=>{
+        setRequestStatus({ loading: false, data: [], status: false, message: ''})
+      }, 5000)
+    })
   }
 
   return (
@@ -107,10 +121,11 @@ export default function Signup() {
         </div>
 
         <div className="mt-10 w-full">
+        <p className={`w-full text-center ${requestStatus.status ? 'text-emerald-600' : 'text-red-600'} ${requestStatus.message ? 'block' : 'hidden'}`}>{requestStatus.message}</p>
             {requestStatus.loading ?
                 <ReloadSpinner size="10" fillColor='fill-primary-default' />
             :
-                <Button onClick={handleSubmit} disable={requestStatus.loading} text="Login" className="rounded-full w-full" />
+                <Button onClick={handleSubmit} disable={requestStatus.loading} text="Register" className="rounded-full w-full" />
             }
         </div>
         <p className="mt-2 w-full text-black flex items-center justify-center gap-2">

@@ -82,7 +82,7 @@ export default function ForgetPwd() {
             {requestStatus.loading ?
                 <ReloadSpinner size="10" fillColor='fill-primary-default' />
             :
-                <Button onClick={handleSubmit} disable={requestStatus.loading} text="Login" className="rounded-full w-full" />
+                <Button onClick={handleSubmit} disable={requestStatus.loading} text="Proceed" className="rounded-full w-full" />
             }
         </div>
         <p className="mt-2 w-full text-black flex items-center justify-center gap-1">

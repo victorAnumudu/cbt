@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom"
 import { Modal } from "../shared"
+import Cookies from 'js-cookie'
 
 type Props = {
     onClose: () => any
@@ -9,6 +11,14 @@ export default function LogoutModal({
     onClose,
     handleFunction
 }:Props) {
+
+  const navigate = useNavigate()
+
+  const logout = () => {
+    Cookies.remove('token')
+    navigate('/login')
+  }
+
   return (
     <Modal>
     <div className='modal-container'>
@@ -46,7 +56,8 @@ export default function LogoutModal({
       </div>
       <div className='modal-footer'>
         <button onClick={handleFunction} name='cancel' className='custom-btn text-red-500 border border-red-500'>Cancel</button>
-        <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary-default hover:bg-primary-light'>Yes</button>
+        {/* <button onClick={handleFunction} name='proceed' className='custom-btn text-white bg-primary-default hover:bg-primary-light'>Yes</button> */}
+        <button onClick={logout} name='proceed' className='custom-btn text-white bg-primary-default hover:bg-primary-light'>Yes</button>
       </div>
     </div>
   </Modal>
