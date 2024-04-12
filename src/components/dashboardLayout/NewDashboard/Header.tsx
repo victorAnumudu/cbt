@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { userContext } from "../../../context/UserContext";
 
+import Avatar from '../../../assets/avatar/avatar1.jpg'
+
 // import { imageGetter } from "../../../utils";
 
 import Img from '../../../assets/images/Logo-header.svg'
@@ -16,7 +18,7 @@ type Props ={
 
 export default function Header({showAside, asideDisplay, handleLogoutModal }:Props) {
 
-  let { mode, changeMode }:any = userContext()
+  let { mode, changeMode, userDetails }:any = userContext()
 
   const [openDropDown, setOpenDropDown] = useState(false)
   const toggleDropDown = () => {
@@ -40,11 +42,11 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         {/* MENU HAND BURGER */}
         <div className="relative z-20 flex justify-center items-center text-sm">
           <p className="w-14 h-14 rounded-full text-white bg-primary flex items-center justify-center shadow-sm shadow-dark dark:shadow-dark-light">
-            AC
+            <img src={Avatar} className="w-full h-full rounded-full" />
           </p>
         </div>
         <div className='relative z-20 w-full flex justify-start items-center gap-2'>
-          <p className='text-primary hidden sm:flex dark:text-dark-light'>Austin Catherine</p>
+          <p className='text-primary hidden sm:flex dark:text-dark-light'>{userDetails.name}</p>
           <div className={`${openDropDown ? '-rotate-180' : 'rotate-0'} transition-all duration-300`}>
             <Icons 
               name='greater-than' 

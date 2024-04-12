@@ -13,7 +13,7 @@ export default {
       },
       colors: {
         primary: {
-          // default: '#5C2684',
+          // DEFAULT: '#5C2684',
           // light: 'rgba(92,38,132,0.8)',
           // dark: ''
           DEFAULT: 'rgba(15,108,150,1)',
