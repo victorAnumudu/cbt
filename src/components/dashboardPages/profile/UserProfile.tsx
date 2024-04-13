@@ -27,7 +27,7 @@ export default function UserProfile() {
         <div className="p-8 w-full lg:flex lg:flex-row-reverse gap-8">
 
             {/* PROFILE IMAGE */}
-            <div className="p-4 w-full sm:max-w-[300px] mx-auto flex flex-col items-center bg-slate-50/80">
+            <div className="p-4 w-full sm:max-w-[300px] mx-auto flex flex-col items-center bg-slate-50/80 dark:bg-transparent">
               <img src={selectImage ? URL.createObjectURL(selectImage) : User} className="w-[200px] h-[200px] rounded-full shadow-lg dark:shadow-md dark:shadow-dark-light flex justify-center items-center" />
               <input type="file" id='image' className="hidden" onChange={handleImageSelect} />
               <div className="p-4 w-full flex justify-center gap-2 items-center">

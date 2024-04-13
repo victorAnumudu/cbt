@@ -12,7 +12,7 @@ export default function Profile() {
   return (
     <div className="w-full min-h-full">
       <p className='w-full text-3xl text-primary font-medium tracking-wide'>User Profile</p>
-      <div className="mt-4 relative block sm:grid grid-cols-5 bg-white/90 dark:bg-dark text:black dark:text-dark-light shadow-md rounded-2xl">
+      <div className="mt-4 relative block sm:grid grid-cols-5 bg-white/90 dark:bg-white/10 text:black dark:text-dark-light shadow-md rounded-2xl">
         {/* TABS */}
         <div className="sticky top-52 p-4 col-span-1 hidden sm:block border-r">
           {tabs.map(tab => (
