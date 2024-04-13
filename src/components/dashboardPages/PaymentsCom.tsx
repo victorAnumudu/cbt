@@ -2,8 +2,8 @@ import PaginatedList from "../listLayout/PaginatedList"
 
 import { list } from "../../data/data"
 
-// import Image1 from '../../assets/avatar/avatar1.jpg'
-// import Image2 from '../../assets/avatar/avatar2.png'
+import Image1 from '../../assets/avatar/avatar1.jpg'
+import Image2 from '../../assets/avatar/avatar2.png'
 import PaymentEditModal from "../popout/PaymentEditModal"
 import PaymentDeleteModal from "../popout/PaymentDeleteModal"
 import PaymentViewModal from "../popout/PaymentViewModal"
@@ -68,8 +68,8 @@ export default function PaymentsCom() {
                     <tr key={item.id} className={`border-t cursor-pointer ${index%2 != 0 && 'bg-red-50'}`}>
                       <td className="p-1">
                         <div className="w-10 h-10">
-                          {/* <img className="w-full h-full rounded-full" src={index%2==0 ? Image1 : Image2} /> */}
-                          <img className="w-full h-full rounded-full" src={imageGetter(`avatar/${item.image}`)} />
+                          <img className="w-full h-full rounded-full" src={index%2==0 ? Image1 : Image2} />
+                          {/* <img className="w-full h-full rounded-full" src={imageGetter(`avatar/${item.image}`)} /> */}
                         </div>
                       </td>
                       <td className="p-1 hidden md:block">{Math.random().toString().slice(2, 14)}</td>
