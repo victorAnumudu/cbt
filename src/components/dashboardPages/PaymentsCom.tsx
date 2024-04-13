@@ -9,7 +9,7 @@ import PaymentDeleteModal from "../popout/PaymentDeleteModal"
 import PaymentViewModal from "../popout/PaymentViewModal"
 import { useState } from "react"
 
-import { imageGetter } from "../../utils"
+// import { imageGetter } from "../../utils"
 
 type ModalProps = {
   view: boolean,
