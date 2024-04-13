@@ -1,4 +1,4 @@
-import { ReactNode, useState, useEffect, MouseEvent } from 'react'
+import { ReactNode, useState, useEffect } from 'react'
 
 import Aside from './Aside'
 import LogoutModal from '../../popout/LogoutModal'
@@ -74,6 +74,7 @@ export default function DashboardLayout({children}:{children: ReactNode}) {
           <div className='w-full h-[calc(100vh_-_100px)] flex p-2 md:p-5 relative'>
             <div className='h-full w-full'>
               {children}
+              <p className='p-2'></p>
             </div>
 
             {/* <div className={`pl-5 w-[300px] min-w-[300px] hidden lg:block`}>
