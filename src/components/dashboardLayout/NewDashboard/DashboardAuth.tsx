@@ -19,27 +19,27 @@ export default function DashboardAuth():any {
  let [pageLoading, setPageLoading] = useState(true)
 
  const loadUser = () => {
-  // setPageLoading(true)
-  // axios.get('https://convene-backend.onrender.com/users/profile',{
-  //   headers:{
-  //     Authorization: `bearer ${Cookies.get('token')}`
-  //   }
-  // }).then((res)=>{
-  //   if(!res.data.status){
-  //     setPageLoading(false)
-  //     setUserExist(false)
-  //     return
-  //   }
-  //   setUserDetails(res.data.data[0])
-  //   setPageLoading(false)
-  //   setUserExist(true)
-  // }).catch((err:any)=>{
-  //   console.log('ERROR', err.response)
-  //   setPageLoading(false)
-  // })
-  setUserDetails({email:'test@gmail.com', name:'Anumudu Victor'})
+  setPageLoading(true)
+  axios.get('https://convene-backend.onrender.com/users/profile',{
+    headers:{
+      Authorization: `bearer ${Cookies.get('token')}`
+    }
+  }).then((res)=>{
+    if(!res.data.status){
+      setPageLoading(false)
+      setUserExist(false)
+      return
+    }
+    setUserDetails(res.data.data[0])
     setPageLoading(false)
     setUserExist(true)
+  }).catch((err:any)=>{
+    console.log('ERROR', err.response)
+    setPageLoading(false)
+  })
+  // setUserDetails({email:'test@gmail.com', name:'Anumudu Victor'})
+  //   setPageLoading(false)
+  //   setUserExist(true)
  }
 
   useEffect(()=>{
