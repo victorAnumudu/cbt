@@ -11,10 +11,10 @@ export default function Profile() {
 
   return (
     <div className="w-full min-h-full">
-      <div className="w-full h-10 sticky z-10 top-24 flex justify-between items-center gap-8 bg-[#F9F9F9] dark:bg-dark mode-transition">
+      <div className="py-5 w-full h-10 sticky z-10 top-24 flex justify-between items-center gap-8 bg-[#F9F9F9] dark:bg-dark mode-transition">
         <p className='text-xl md:text-3xl text-primary font-medium tracking-wide'>User Profile</p>
         {/* Shows profile setting selection on mobile view */}
-        <div className="relative my-5 sm:hidden">
+        <div className="relative sm:hidden">
           <select
             name=""
             id=""
