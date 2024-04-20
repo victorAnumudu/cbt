@@ -26,7 +26,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
   }
 
   return (
-    <header className={`mode-transition p-5 sticky z-10 top-0 w-full flex items-center justify-between bg-[#F9F9F9] dark:bg-dark border-b-2 border-[#E6E6E6] bg-[url('../../../../src/assets/images/dashboard/bg_ellipse1.png')] bg-no-repeat bg-[top_right]`}>
+    <header className={`mode-transition p-5 sticky z-50 top-0 w-full flex items-center justify-between bg-[#F9F9F9] dark:bg-dark border-b-2 border-[#E6E6E6] bg-[url('../../../../src/assets/images/dashboard/bg_ellipse1.png')] bg-no-repeat bg-[top_right]`}>
     <div className='h-14 flex items-center gap-5'>
       <HandBurger 
         showAside={showAside}
@@ -56,7 +56,7 @@ export default function Header({showAside, asideDisplay, handleLogoutModal }:Pro
         </div>
 
         {/* menu */}
-        <div className={`mode-transition absolute top16 z-10 w-[200px] ${ openDropDown ? 'top-16 opacity-100 right-0' : '-top-full opacity-0 -right-full' } bg-white dark:bg-dark dark:shadow-sm dark:shadow-dark-light dark:text-dark-light shadow-lg rounded-sm overflow-hidden transition-all duration-300`}>
+        <div className={`mode-transition absolute top16 z-10 w-[200px] ${ openDropDown ? 'top-16 opacity-100 right-0' : '-top-full opacity-0 -right-full hidden' } bg-white dark:bg-dark dark:shadow-sm dark:shadow-dark-light dark:text-dark-light shadow-lg rounded-sm overflow-hidden transition-all duration-300`}>
           <div className="py-2">
             {[{name:'Settings', link:'/dashboard/profile'}, {name:'mode', link:'#'}].map((item)=>{
               if(item.name == 'mode'){
