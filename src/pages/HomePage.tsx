@@ -1,44 +1,11 @@
-// import FloatSelectInput from "../components/FloatSelectInput"
-export default function Home() {
+import Home from "../components/home/Home";
 
-  // let [value, setvalue] = useState<string>('')
 
-  // const handleVal = (value:string) => {
-  //   setvalue(value)
-  // }
+export default function HomePage() {
 
   return (
-    <div>Home
-      <br />
-      <a href="../assets/box-family.png" download>Download</a>
-      <video src="../assets/audio/5_second_sound_effect.mp4" controls></video>
-      <div className="w-72">
-        {/* <FloatSelectInput 
-          data={customData}
-          name='state'
-          onSelect={()=>handleVal}
-        /> */}
-      </div>
-      <p>Hello</p>
-      <div className="w-full h-10 relative after:absolute after:content-['▼'] active:after:rotate-180 after:transition-all after:duration-300 after:z-20 after:right-2 after:top-1/2 after:-translate-y-1/2 after:text-white">
-        <select
-          name=""
-          id=""
-          className="relative z-10 appearance-none text-white p-2 transition-all cursor-pointer bg-blue-900 focus:outline-none border border-gray-200 rounded-full w-full h-full"
-          onChange={()=>{}}
-          value=''
-        >
-          <option value="" className="">
-            Select a kid
-          </option>
-          {[1,1,1,1,1,1,1,1,].map((item, index) => (
-          <option key={index} value="" className="">
-            Select a kid {item}
-          </option>
-          ))}
-        </select>
-      </div>
-
+    <div className="w-full">
+      <Home />
       {/* <OTPInput /> */}
     </div>
   )

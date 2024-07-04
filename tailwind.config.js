@@ -11,6 +11,9 @@ export default {
         xxs: "350px",
         xxl: "1900px",
       },
+      maxWidth:{
+        xxl: "1700px",
+      },
       colors: {
         primary: {
           // DEFAULT: '#5C2684',

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 
 // AUTH PAGES
 // import LoginPage from "./pages/LoginPage";
@@ -24,7 +24,7 @@ export default function PageRouters() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<NewLogin />} />
           <Route path="/register" element={<SignupPage />} />
