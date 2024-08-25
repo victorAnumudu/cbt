@@ -7,6 +7,7 @@ import Cookies from 'js-cookie'
 import { userContext } from "../../../context/UserContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import LoadingLine from "../../LoadingLine";
 
 export default function DashboardAuth():any {
 
@@ -58,6 +59,9 @@ export default function DashboardAuth():any {
         <div className="w-full flex flex-col items-center justify-center">
           <img src={Logo} className="max-w-sm" />
           <ReloadSpinner size="10" fillColor='fill-primary' />
+          <div className="mt-2 w-48">
+            <LoadingLine />
+          </div>
         </div>
       </div>
       :!pageLoading && !userExist ?
